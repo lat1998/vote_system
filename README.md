@@ -2,6 +2,8 @@
 
 A secure online voting platform built with Laravel 13. Administrators can manage elections and candidates, while registered voters can securely log in, cast ballots, and view results. The REST API uses Laravel Sanctum for token-based authentication and role-based access control.
 
+The project documentation covers setup, usage, and demo preparation.
+
 ## Features
 
 * Secure web login and registration for voters and admins
