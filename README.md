@@ -4,6 +4,8 @@ A secure online voting platform built with Laravel 13. Administrators can manage
 
 The project documentation covers setup, usage, and demo preparation.
 
+Deployment notes are included to support online project presentation.
+
 ## Features
 
 * Secure web login and registration for voters and admins
