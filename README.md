@@ -232,10 +232,10 @@ Set `APP_ENV=production`, `APP_DEBUG=false`, and configure your database in `.en
 
 | Name | Role |
 | --- | --- |
-| Raven Kristian Abarintos | Project Lead & Backend Developer |
-| Kyerbie Adam Bautista | UI/UX & Frontend Development |
-| Carl Justen Earl Sison | API & Database Design |
-| Mikko Catinguel | Testing & Quality Assurance |
+| Mariella Ovido | Project Lead & Backend Developer |
+| Marvin Latiza | UI/UX & Frontend Development |
+| Mariphil Marigmen | API & Database Design |
+
 
 ## Running Tests
 
