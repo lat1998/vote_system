@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 5rem 0; }
+        .feature-icon { font-size: 2rem; color: var(--primary); }
+        .contributor-card { transition: transform 0.2s ease; }
+        .contributor-card:hover { transform: translateY(-4px); }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 600; margin: 0 auto 1rem; }
+        pre { white-space: pre-wrap; word-break: break-word; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🗳️ Voting System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#api">API</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contributors">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Voting System Documentation</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 720px;">
+                A lightweight static documentation site for the Laravel-based online voting application.
+                The actual application runs on a PHP server with login and API authentication enabled.
+            </p>
+            <div class="alert alert-info d-inline-block text-start">
+                <i class="bi bi-info-circle me-2"></i>
+                This GitHub Pages page is documentation only. It does not host the Laravel application.
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Key Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3"><i class="bi bi-shield-lock"></i></div>
+                            <h5>Secure Authentication</h5>
+                            <p class="text-muted mb-0">Web login and Sanctum bearer token API security for protected actions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3"><i class="bi bi-ballot"></i></div>
+                            <h5>Election Management</h5>
+                            <p class="text-muted mb-0">Admin tools to create elections, add candidates, and manage voting lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3"><i class="bi bi-bar-chart-line"></i></div>
+                            <h5>Results & Reports</h5>
+                            <p class="text-muted mb-0">Export votes and analytics in CSV, JSON, and HTML formats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="api" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">API Authentication</h2>
+            <p class="text-center text-muted mb-4">Protected operations require a Bearer token from `POST /api/login`.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <pre class="bg-dark text-light p-4 rounded"><code># Login
+curl -X POST http://localhost:8000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@example.com","password":"password"}'
+
+# Cast a vote
+curl -X POST http://localhost:8000/api/votes \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"election_id":1,"candidate_id":2}'
+
+# Logout
+curl -X POST http://localhost:8000/api/logout \
+  -H "Authorization: Bearer YOUR_TOKEN"</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contributors" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Project Team</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-md-3">
+                    <div class="card contributor-card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="avatar">PL</div>
+                            <h6 class="fw-bold mb-1">Project Lead</h6>
+                            <p class="text-muted small mb-0">Backend Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card contributor-card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="avatar">FD</div>
+                            <h6 class="fw-bold mb-1">Frontend Developer</h6>
+                            <p class="text-muted small mb-0">UI/UX & Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card contributor-card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="avatar">BE</div>
+                            <h6 class="fw-bold mb-1">Backend Engineer</h6>
+                            <p class="text-muted small mb-0">API & Database</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="card contributor-card h-100 shadow-sm border-0 text-center">
+                        <div class="card-body p-4">
+                            <div class="avatar">QA</div>
+                            <h6 class="fw-bold mb-1">QA Engineer</h6>
+                            <p class="text-muted small mb-0">Testing & Quality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-muted mt-4 small">Update these values in <code>config/contributors.php</code> for your team.</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Voting System. Built with Laravel 13.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
